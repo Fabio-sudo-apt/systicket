@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:systikcet/pages/create_route.dart';
+import 'package:systikcet/pages/login.dart';
 
 class PainelADM extends StatelessWidget {
   const PainelADM({Key? key}) : super(key: key);
@@ -42,7 +43,18 @@ class PainelADM extends StatelessWidget {
                   containerConfig(
                     title: "Ver rotas",
                     icon: Icons.route,
-                    onTap: () {},
+                    onTap: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text(
+                            "Ainda nao",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 255, 0, 0),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
                   ),
                   Container(
                     width: sizeBox,
@@ -50,7 +62,18 @@ class PainelADM extends StatelessWidget {
                   containerConfig(
                     title: "Relatorios",
                     icon: Icons.report,
-                    onTap: () {},
+                    onTap: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text(
+                            "Ainda nao",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 255, 0, 0),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
                   ),
                   Container(
                     width: sizeBox,
@@ -66,7 +89,18 @@ class PainelADM extends StatelessWidget {
                   containerConfig(
                     title: "Configuração de usuarios",
                     icon: Icons.settings,
-                    onTap: () {},
+                    onTap: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text(
+                            "Ainda nao",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 255, 0, 0),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
                   ),
                   Container(
                     width: sizeBox,
@@ -74,7 +108,14 @@ class PainelADM extends StatelessWidget {
                   containerConfig(
                     title: "Sair",
                     icon: Icons.exit_to_app,
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Login(),
+                        ),
+                      );
+                    },
                   ),
                   Container(
                     width: sizeBox,

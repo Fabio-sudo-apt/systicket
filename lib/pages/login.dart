@@ -98,7 +98,14 @@ class _LoginState extends State<Login> {
                                   isLoading = true;
                                 });
                                 // String data = await _login()
-                                if (true) {
+                                if ((_emailController.text == "admin" &&
+                                        _passwordController.text == "123qwe") ||
+                                    (_emailController.text == "carlos" &&
+                                        _passwordController.text == "123456") ||
+                                    (_emailController.text == "fabio" &&
+                                        _passwordController.text == "123456") ||
+                                    (_emailController.text == "vini.jr" &&
+                                        _passwordController.text == "123456")) {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
@@ -114,6 +121,7 @@ class _LoginState extends State<Login> {
                                       content: Text(
                                         "Atenção! Login ou Senha incorrentos.",
                                         style: TextStyle(
+                                          fontSize: 20,
                                           color: Color(0xFFFF0000),
                                         ),
                                       ),

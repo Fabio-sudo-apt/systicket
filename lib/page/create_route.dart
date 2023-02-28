@@ -228,7 +228,6 @@ class _CreateRouterState extends State<CreateRouter> {
         "branco": branco,
       };
       final response = await http.post(uri, body: data);
-
       _origemController.text = "";
       _horarioEntradaController.text = "";
       _subrotaController.text = "";
@@ -236,7 +235,6 @@ class _CreateRouterState extends State<CreateRouter> {
       _subrotaController.text = "";
       _horarioSaidaController.text = "";
       _brancoController.text = "";
-
       return response.statusCode;
     }
   }

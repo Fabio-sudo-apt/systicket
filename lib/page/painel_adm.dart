@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:systikcet/pages/create_route.dart';
-import 'package:systikcet/pages/login.dart';
+import 'package:systikcet/page/create_route.dart';
+import 'package:systikcet/page/login.dart';
 
 class PainelADM extends StatelessWidget {
   const PainelADM({Key? key}) : super(key: key);

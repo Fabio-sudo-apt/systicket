@@ -1,10 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:systikcet/pages/painel_adm.dart';
-import 'package:systikcet/pages/usuario_form.dart';
+import 'package:systikcet/page/painel_adm.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:http/http.dart' as http;
-import 'package:systikcet/pages/widget/text_form_field.dart';
+import 'package:systikcet/page/widget/text_form_field.dart';
 import '../auth/auth.dart';
 
 class Login extends StatefulWidget {
@@ -15,13 +13,11 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   bool isLoading = false;
-
   final formKey = GlobalKey<FormState>();
-  // Auth auth = Auth();
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +38,7 @@ class _LoginState extends State<Login> {
                   children: [
                     Expanded(
                       child: Image.asset(
-                        "lib/kombi-login-reco.jpg",
+                        "assets/img/kombi-login-reco.jpg",
                         height: 100.0,
                         width: 500.0,
                       ),
@@ -88,7 +84,8 @@ class _LoginState extends State<Login> {
                           height: 40,
                           child: OutlinedButton(
                             style: OutlinedButton.styleFrom(
-                              elevation: 2.0,
+                              side: BorderSide.none,
+                              shape: const RoundedRectangleBorder(),
                               backgroundColor:
                                   const Color.fromRGBO(255, 176, 102, 1),
                             ),
@@ -97,7 +94,6 @@ class _LoginState extends State<Login> {
                                 setState(() {
                                   isLoading = true;
                                 });
-                                // String data = await _login()
                                 if ((_emailController.text == "admin" &&
                                         _passwordController.text == "123qwe") ||
                                     (_emailController.text == "carlos" &&
@@ -165,7 +161,6 @@ class _LoginState extends State<Login> {
       _emailController.text,
       _passwordController.text,
     );
-    print(resp.statusCode);
     var jsonResponse = json.decode(resp.body);
     if (resp.statusCode == 200) {
       SharedPreferences localStorage = await SharedPreferences.getInstance();
